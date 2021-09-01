@@ -18,7 +18,7 @@ function MovieDetail(props) {
 }
 
 export async function getStaticPaths() {
-  const response = await fetch("http://localhost:3000/api/all-movies");
+  const response = await fetch("/api/all-movies");
   const data = await response.json();
 
   return {
@@ -33,7 +33,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context) {
   const id = context.params.movieId;
-  const response = await fetch("http://localhost:3000/api/get-movie", {
+  const response = await fetch("/api/get-movie", {
     method: "POST",
     body: JSON.stringify({ id }),
     headers: {

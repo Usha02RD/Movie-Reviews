@@ -17,7 +17,7 @@ function AllMovies(props) {
 }
 
 export async function getStaticProps() {
-  const response = await fetch("http://localhost:3000/api/all-movies");
+  const response = await fetch("/api/all-movies");
   const data = await response.json();
   return {
     props: {
