@@ -23,7 +23,7 @@ export async function getStaticPaths() {
 
   return {
     fallback: false,
-    paths: data.movies.length && data.movies.map((movie) => ({
+    paths: data.movies && data.movies.map((movie) => ({
       params: {
         movieId: movie._id,
       },
