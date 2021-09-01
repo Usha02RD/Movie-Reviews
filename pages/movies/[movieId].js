@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { useRouter } from "next/router";
+import server from '../../config'
 import { Fragment } from "react";
 import MovieDetails from "../../components/movies/MovieDetails";
 
@@ -18,7 +18,7 @@ function MovieDetail(props) {
 }
 
 export async function getStaticPaths() {
-  const response = await fetch("/api/all-movies");
+  const response = await fetch(`${server}/api/all-movies`);
   const data = await response.json();
 
   return {
@@ -33,7 +33,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context) {
   const id = context.params.movieId;
-  const response = await fetch("/api/get-movie", {
+  const response = await fetch(`${server}/api/get-movie`, {
     method: "POST",
     body: JSON.stringify({ id }),
     headers: {

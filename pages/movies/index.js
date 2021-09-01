@@ -1,4 +1,5 @@
 import Head from "next/head";
+import server from '../../config'
 import { Fragment } from "react";
 import MovieList from "../../components/movies/MovieList";
 
@@ -17,7 +18,7 @@ function AllMovies(props) {
 }
 
 export async function getStaticProps() {
-  const response = await fetch("http://localhost:3000/api/all-movies");
+  const response = await fetch(`${server}/api/all-movies`);
   const data = await response.json();
   return {
     props: {
