@@ -4,6 +4,7 @@ import { Fragment } from "react";
 import MovieList from "../../components/movies/MovieList";
 
 function AllMovies(props) {
+  console.log(server)
   return (
     <Fragment>
       <Head>
