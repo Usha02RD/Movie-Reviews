@@ -1,0 +1,21 @@
+.root {
+  flex-grow: 1,
+}
+.menuButton {
+  margin-right:20px,
+}
+.title {
+  flex-grow: 1,
+}
+.nav{
+  display: flex;
+  width: 100%;
+    justify-content: space-between;
+}
+.nav div{
+  display: flex;
+  align-items: center;
+}
+.nav a{
+  margin: 0 10px;
+}
